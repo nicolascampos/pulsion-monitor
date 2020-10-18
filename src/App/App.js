@@ -1,6 +1,9 @@
 import React from 'react';
 
+import Header from './components/Header/Header.js';
 import MessageTable from './components/MessagesTable/MessagesTable.js';
+
+import './App.scss';
 
 class App extends React.Component {
   constructor(props) {
@@ -31,10 +34,13 @@ class App extends React.Component {
   }
   render() {
     return (
-      <>
-        <h1>Pulsion Monitor</h1>
-        <MessageTable messages={this.state.MIDIMessages}></MessageTable>
-      </>
+      <div className="container">
+        <Header></Header>
+        <MessageTable
+          inputDevices={this.state.inputDevices}
+          messages={this.state.MIDIMessages}
+        ></MessageTable>
+      </div>
     );
   }
   /**
